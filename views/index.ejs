@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortner</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Short URL Generator</h2>
+
+        <form action="/shortUrl" method="post">
+            <div class="form-group">
+                <input type="url" id="fullURL" name="fullURL" required/>
+                <button type="submit" class="submit-button">Shorten It</button>
+            </div>
+        </form>
+
+        <div class="table-div">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Full_URL</th>
+                        <th>Short_URL</th>
+                        <th>No. of Clicks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%allData.forEach(data =>{%>
+                        <tr>
+                            <td><a href="<%=data.full%>"><%=data.full%></a></td>
+                            <td><a href="<%=data.short%>"><%=data.short%></a></td>
+                            <td><span><%=data.clicks%></span></td>
+                        </tr>
+                    <% })%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+</html>

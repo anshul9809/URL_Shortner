@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+body{
+    display: grid;
+    justify-items: center;
+}
+.container{
+    width:90%;
+    display: grid;
+    justify-items: center;
+}
+.container h2{
+    text-align: center;
+    font-size: 3rem;
+    padding: 1%;
+}
+.container form{
+    width: 70%;
+    padding: 10px;
+    font-size: 1.4rem;
+    background-color: red;
+}
+.form-group{
+    display: flex;
+}
+.container form .form-group input{
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    transition: all ease-in-out 0.3s;
+    margin-right: 10px;
+}
+.container form .form-group input:focus{
+    background-color: rgba(256,256,256,0.8);
+    box-shadow: 1px 1px 4px 1px skyblue;
+}
+.container form .form-group .submit-button{
+    flex-grow: 1;
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    background-color: yellow;
+    
+}
