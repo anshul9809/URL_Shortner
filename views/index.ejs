@@ -12,25 +12,28 @@
 
         <form action="/shortUrl" method="post">
             <div class="form-group">
-                <input type="url" id="fullURL" name="fullURL" required/>
+                <input type="url" id="fullURL" name="fullURL" placeholder="Enter Full Url or Paste it here" required/>
                 <button type="submit" class="submit-button">Shorten It</button>
             </div>
         </form>
 
         <div class="table-div">
             <table>
+                <caption>
+                    <h3>List of shortened URLs:</h3>
+                </caption>
                 <thead>
                     <tr>
-                        <th>Full_URL</th>
                         <th>Short_URL</th>
+                        <th>Full_URL</th>
                         <th>No. of Clicks</th>
                     </tr>
                 </thead>
                 <tbody>
                     <%allData.forEach(data =>{%>
                         <tr>
-                            <td><a href="<%=data.full%>"><%=data.full%></a></td>
                             <td><a href="<%=data.short%>"><%=data.short%></a></td>
+                            <td><a href="<%=data.full%>"><%=data.full%></a></td>
                             <td><span><%=data.clicks%></span></td>
                         </tr>
                     <% })%>

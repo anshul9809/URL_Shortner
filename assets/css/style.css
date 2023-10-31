@@ -1,27 +1,51 @@
+:root{
+    --text-color: #f0f0f0;
+    --back-color: #0f0f0f;
+}
 *{
     margin: 0;
     padding: 0;
     list-style: none
 }
 body{
-    display: grid;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
+    background-image: url("../img/back.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
 }
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
 .container{
     width:90%;
-    display: grid;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
 }
 .container h2{
     text-align: center;
     font-size: 3rem;
     padding: 1%;
+    color: #4d5ed2;
+    background: linear-gradient(270deg, #e39ba5 0%, #9be2d8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 .container form{
     width: 70%;
     padding: 10px;
-    font-size: 1.4rem;
-    background-color: red;
+    font-size: 1.3rem;
 }
 .form-group{
     display: flex;
@@ -34,16 +58,90 @@ body{
     outline: 0;
     transition: all ease-in-out 0.3s;
     margin-right: 10px;
+    font-size: 1.3em;
 }
 .container form .form-group input:focus{
-    background-color: rgba(256,256,256,0.8);
     box-shadow: 1px 1px 4px 1px skyblue;
 }
 .container form .form-group .submit-button{
     flex-grow: 1;
+    flex-shrink: 0;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #1F1C2C 0%, #928DAB  51%, #1F1C2C  100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 10px #eee;
     border-radius: 10px;
-    border: 0;
-    outline: none;
-    background-color: yellow;
-    
+    display: block;
+    font-size: 1.1em;
+    padding: 5px;
 }
+.container form .form-group .submit-button:hover,
+.container form .form-group .submit-button:focus{
+    box-shadow: 2px 2px 0px 0px black;
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.table-div{
+    width: 70%;
+    margin-top: 30px;
+    overflow-x: auto;
+}
+.table-div table{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: collapse;
+    border: 1px solid white;
+}
+.table-div table caption{
+    font-size: 1.6rem;
+    font-size: 1000;
+}
+.table-div table thead tr th{
+    padding: 10px;
+    border: 2px solid white;
+}
+.table-div table tbody tr td{
+    padding: 7px;
+    border: 1px solid white;
+    color: white;
+}
+.table-div table tbody tr:nth-child(even){
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 20%, rgba(0,0,0,0.40) 80%) #989898;
+    background-blend-mode: multiply,multiply;
+}
+@media (max-width: 1000px){
+    .container form,
+    .container .table-div{
+        width: 90%;
+    }
+}
+@media (max-width: 768px){
+    .container{
+        width: 100%;
+        margin: 0;
+        padding:0;
+    }
+    .container h2{
+        /* font-size: 1.6rem; */
+        background-color: red;
+    }
+    .container form,
+    .container .table-div{
+        width: 90%;
+    }
+    .container form > * {
+        font-size: 0.6rem;
+        font-weight: 800;
+    }
+}
+
+ 
